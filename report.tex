@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage{easyReport}
+\usepackage{lipsum}
+
+\renewcommand{\myFirstName}{Mathilde}
+\renewcommand{\myLastName}{Renault}
+\renewcommand{\myEmail}{mathilde.renault@enst-bretagne.org}
+\renewcommand{\myOption}{MAMS}
+\renewcommand{\myYear}{2021}
+\renewcommand{\reportTitle}{Long, Uninspiring and Dummy report title}
+\renewcommand{\theDate}{\today}
+\renewcommand{\theCourseNumber}{UE 1.1}
+\renewcommand{\theCourseTitle}{Some boring Material thing}
+\renewcommand{\firstPagePicture}{placeholder.png}
+\renewcommand{\schoolLogo}{placeholder.png}
+
+\begin{document}
+\makeReportFirstPage
+
+\makeTOC
+
+\section{First section}
+
+\subsection{First subsection}
+
+\lipsum[1]
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.1]{placeholder.png}
+\caption{Dummy caption}
+\label{fig:dummy-caption}
+\end{figure}
+
+\subsection{Second subsection}
+\lipsum[2]
+
+\section{Second section}
+\lipsum[3]
+
+\nnsection{A non-numbered section}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Item & Price (\$) & Quantity & Subtotal (\$) \\
+\midrule
+Carrot & 0.5 & 32 & 16 \\
+Eggplant & 1 & 45 & 45 \\
+\bottomrule
+\end{tabular}
+\caption{A dummy table}
+\label{tab:courses}
+\end{table}
+
+\makeLOFT
+
+\end{document}

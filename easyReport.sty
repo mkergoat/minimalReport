@@ -1,0 +1,113 @@
+% --------------------------
+% Easy Report Class 
+% --------------------------
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[french]{babel}
+\RequirePackage{amsmath, amsfonts}
+\RequirePackage{siunitx}
+\RequirePackage[tikz]{bclogo}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{graphicx} 
+%\RequirePackage[table,xcdraw]{xcolor}
+\RequirePackage[lofdepth,lotdepth]{subfig}
+\RequirePackage{lscape}
+\graphicspath{\myGraphicsPath}
+\RequirePackage{fullpage}
+\RequirePackage{booktabs}
+\RequirePackage{hyperref}
+
+% -------
+% Initializing values
+% -------
+\newcommand{\myFirstName}{Mathilde}
+\newcommand{\myLastName}{Smith}
+\newcommand{\myEmail}{mathilde.smith@enst-bretagne.org}
+\newcommand{\myOption}{MAMS}
+\newcommand{\myYear}{2021}
+\newcommand{\reportTitle}{Dummy report title}
+\newcommand{\theDate}{\today}
+\newcommand{\theCourseNumber}{UE 1.1}
+\newcommand{\theCourseTitle}{Something}
+\newcommand{\firstPagePicture}{placeholder.png}
+\newcommand{\schoolLogo}{placeholder.png}
+
+\newcommand{\makeReportFirstPage}{%
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[height=2.5cm]{\schoolLogo}
+    
+    \vspace{0.5em}
+
+    \textsc{\large Ecole Nationale Supérieure des Techniques Avancées}
+    
+    \vspace{2.5cm}
+
+    \textbf{\Large Rapport de Bureau d'Etudes}
+    
+    \vspace{0.5cm}
+    
+    \textsc{\bfseries\LARGE \reportTitle}
+    
+\vspace{1.5cm}
+
+    \includegraphics[height=7cm]{\firstPagePicture}
+\vfill     
+    
+    \begin{minipage}[b]{0.49\textwidth}
+      \begin{flushleft} \large
+        \myFirstName{} \textsc{\myLastName}\\
+        \myOption \myYear\\
+        \myEmail
+      \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+      \begin{flushright} \large
+        \theCourseNumber \\
+        \theCourseTitle\\
+        \theDate
+      \end{flushright}
+    \end{minipage}
+
+  \end{center}
+\end{titlepage}%
+}%
+
+% ------------
+% TOC and LOFT
+% -------------
+
+\newcommand{\makeTOC}{%
+\addcontentsline{toc}{section}{Table des matières}
+\tableofcontents
+\begin{center}
+\hrule
+\end{center}
+}%
+
+\newcommand{\makeLOFT}{%
+\addcontentsline{toc}{section}{Liste des Figures}
+\pagebreak\listoffigures
+\addcontentsline{toc}{section}{Liste des Tableaux}
+\listoftables
+}%
+
+% ------------------------
+% Non-numbered Sectionning
+% ------------------------
+\newcommand{\nnsection}[1]{%
+\addcontentsline{toc}{section}{#1}
+\section*{#1}%
+}%
+
+\newcommand{\nnsubsection}[1]{%
+\addcontentsline{toc}{subsection}{#1}
+\subsection*{#1}%
+}%
+
+\newcommand{\nnsubsubsection}[1]{%
+\addcontentsline{toc}{subsubsection}{#1}
+\subsubsection*{#1}%
+}%
