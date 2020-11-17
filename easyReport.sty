@@ -7,10 +7,10 @@
 \RequirePackage[french]{babel}
 \RequirePackage{amsmath, amsfonts}
 \RequirePackage{siunitx}
-\RequirePackage[tikz]{bclogo}
+\RequirePackage{tikz}
 \RequirePackage{graphicx} 
 \newcommand{\myGraphicsPath}{./_template_figs/}
-%\RequirePackage[table,xcdraw]{xcolor}
+\RequirePackage{xcolor}
 \RequirePackage[lofdepth,lotdepth]{subfig}
 \RequirePackage{lscape}
 \RequirePackage{fullpage}
@@ -76,6 +76,10 @@
 }%
 
 % ------------
+% Handling of decimal powers
+% ------------
+\newcommand{\E}[1]{\num{e#1}}
+% -------------
 % TOC and LOFT
 % -------------
 
